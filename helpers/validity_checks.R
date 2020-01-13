@@ -28,7 +28,7 @@ setValidity("animal", function(object) {
     invalids <- c(invalids, "@female must be a logical of length 1")
   }
 
-  invalids <- c(invalids, check_numeric_slot(object@weight))
+  invalids <- c(invalids, check_numeric_slot(object@weight, 0, Inf))
   
   
   # Early return in case of invalids
