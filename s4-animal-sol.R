@@ -3,6 +3,7 @@ source("helpers/classes.R")
 source("helpers/validity_checks.R")
 source("helpers/constructors.R")
 source("helpers/show_methods.R")
+source("helpers/meet_method.R")
 
 set.seed(20191121)
 animals <- list(

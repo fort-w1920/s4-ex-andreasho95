@@ -3,6 +3,8 @@ library(testthat)
 source("classes.R")
 source("validity_checks.R")
 source("constructors.R")
+source("make_name.R")
+source("meet_method.R")
 
 context("Classes handle correctly with incorrect input")
 test_that("animal class handles incorrect input correctly", {
@@ -160,3 +162,31 @@ test_that("lynx class handles proper input correctly", {
   expect_true(test_lynx@weight == 37)
   expect_true(test_lynx@seek == 0.8)
 })
+
+
+
+context("Meet methods")
+
+test_that("meet work correctly", {
+  set.seed(123456)
+  animals <- list(
+    mouse(female = TRUE),
+    rabbit(),
+    hawk(female = TRUE),
+    deer(),
+    lynx(female = TRUE),
+    lynx(female = FALSE),
+    deer(),
+    mouse(female = FALSE),
+    deer(female = TRUE)
+  )
+  
+  expect_match(meet(animals[[1]], animals[[1]]), "puddle")
+  expect_match(meet(animals[[1]], animals[[2]]), "ignore")
+  expect_match(meet(animals[[1]], animals[[3]]), "eats")
+  expect_match(meet(animals[[5]], animals[[6]]), "love")
+  expect_match(meet(animals[[3]], animals[[7]]), "sniff")
+})
+
+
+
