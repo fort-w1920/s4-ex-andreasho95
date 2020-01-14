@@ -75,7 +75,7 @@ deer <- function(name = make_name(), weight = runif(1, 15, 30),
 #   name: a character vector of length 1. Specifies the name of the hawk
 #   weight: a numeric vector of length 1 in [3, 8]. Specifies the weight of the hawk
 #   female: a logical vector of length 1. TRUE indicates female.
-#   hide: a numeric vector of length 1 in [0.6, 1]. Specifices hiding capabilities.
+#   seek: a numeric vector of length 1 in [0.6, 1]. Specifices seeking capabilities.
 hawk <- function(name = make_name(), weight = runif(1, 3, 8), 
                  female = sample(c(TRUE, FALSE), 1), seek = runif(1, 0.6, 1)) {
   new("hawk", name = name, weight = weight, female = female, seek = seek)
@@ -87,7 +87,7 @@ hawk <- function(name = make_name(), weight = runif(1, 3, 8),
 #   name: a character vector of length 1. Specifies the name of the lynx
 #   weight: a numeric vector of length 1 in [20, 60]. Specifies the weight of the lynx
 #   female: a logical vector of length 1. TRUE indicates female.
-#   hide: a numeric vector of length 1 in [0.5, 0.9]. Specifices hiding capabilities.
+#   seek: a numeric vector of length 1 in [0.5, 0.9]. Specifices seeking capabilities.
 lynx <- function(name = make_name(), weight = runif(1, 20, 60), 
                  female = sample(c(TRUE, FALSE), 1), seek = runif(1, 0.5, 0.9)) {
   new("lynx", name = name, weight = weight, female = female, seek = seek)
