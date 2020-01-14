@@ -1,4 +1,4 @@
-# Checks validity of numeric slotsS
+# Checks validity of numeric slots
 # Returns NULL if valid
 # Returns message for specific slot when invalid
 check_numeric_slot <- function(slot, lower = -Inf, upper = Inf) {
